@@ -1,22 +1,14 @@
 import * as React from 'react';
-import { Link, useStaticQuery, graphql } from 'gatsby';
+import { Link } from 'gatsby';
+import { Seo } from '../components/seo';
 
 export default function IndexPage() {
-  const data = useStaticQuery(graphql`
-    query GetSiteData {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `);
-
-  const meta = data?.site?.siteMetadata ?? {};
+  //  && - xa vane and ?? - xaina vane
+  // const meta = data?.site?.siteMetadata ?? {};
 
   return (
     <>
-      <header>{meta.title}</header>
+      <Seo />
       <main>
         <h1>Hello world</h1>
         <Link to="/about">About</Link>
